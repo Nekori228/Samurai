@@ -5,8 +5,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-class StartScreen extends StatelessWidget {
-  const StartScreen({Key? key}) : super(key: key);
+import 'RecoverPasswordPage.dart';
+
+class Authorization extends StatelessWidget {
+  const Authorization({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,17 +22,17 @@ class StartScreen extends StatelessWidget {
             child: Column(
               children: [
                 Image.asset("assets/icons/logo.png", height: 128, width: 117),
-                Text(
+                const Text(
                   'Авторизация',
                   style: TextStyle(color: Color(0xFF3F3F3F), fontSize: 23),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 RichText(
                   textAlign: TextAlign.center,
                   text: TextSpan(children: [
-                    TextSpan(
+                    const TextSpan(
                       style: TextStyle(color: Color(0xFF7F7F7F), fontSize: 15),
                       text:
                           'Для получения доступа необходимо быть сотрудником компании ',
@@ -48,7 +50,7 @@ class StartScreen extends StatelessWidget {
                     ),
                   ]),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Container(
@@ -56,9 +58,9 @@ class StartScreen extends StatelessWidget {
                       horizontal: MediaQuery.of(context).size.width * 0.02),
                   child: Column(
                     children: [
-                      TextField(
+                      const TextField(
                         cursorColor: Colors.black,
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.grey),
                         decoration: InputDecoration(
                           prefixIcon: Icon(
                             Icons.person_2_outlined,
@@ -76,12 +78,12 @@ class StartScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
-                      TextField(
+                      const TextField(
                         cursorColor: Colors.black,
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.grey),
                         decoration: InputDecoration(
                           prefixIcon: Icon(
                             Icons.lock_outline,
@@ -99,7 +101,7 @@ class StartScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       ElevatedButton(
@@ -122,7 +124,7 @@ class StartScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        child: SizedBox(
+                        child: const SizedBox(
                           height: 60,
                           child: Center(
                             child: Text(
@@ -133,13 +135,18 @@ class StartScreen extends StatelessWidget {
                         ),
                       ),
                       TextButton(
-                        onPressed: () {},
-                        child: Text(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const RecoverPassword()),
+                          );
+                        },
+                        child: const Text(
                           'Забыли пароль?',
                           style: TextStyle(color: Colors.grey),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 25,
                       ),
                       OutlinedButton(
@@ -150,11 +157,11 @@ class StartScreen extends StatelessWidget {
                           ),
                           side: BorderSide(color: Color(0xFFE6371F), width: 2),
                         ),
-                        child: SizedBox(
+                        child: const SizedBox(
                           height: 60,
                           child: Center(
                             child: Text(
-                              "Зарегистрироваться",
+                              'Зарегистрироваться',
                               style: TextStyle(
                                   fontSize: 18, color: Color(0xFFE6371F)),
                             ),
@@ -163,8 +170,8 @@ class StartScreen extends StatelessWidget {
                       ),
                       TextButton(
                         onPressed: () {},
-                        child: Text(
-                          'Инструкция для новичков?',
+                        child: const Text(
+                          'Инструкция для новичков',
                           style: TextStyle(
                               decoration: TextDecoration.underline,
                               color: Colors.grey),
