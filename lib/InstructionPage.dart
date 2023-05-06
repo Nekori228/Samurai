@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'ChatPage.dart';
+
 class InstructionPage extends StatelessWidget {
   const InstructionPage({Key? key}) : super(key: key);
 
@@ -11,7 +13,7 @@ class InstructionPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Инструкция',
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700),
         ),
         leading: IconButton(
           icon: SvgPicture.asset(
@@ -30,41 +32,135 @@ class InstructionPage extends StatelessWidget {
               height: 35,
               width: 35,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const ChatPage()),
+              );
+            },
           ),
         ],
       ),
       backgroundColor: Color(0xFFFFF3ED),
-      body: SafeArea(
-        child: Container(
-          margin: EdgeInsets.symmetric(
-              horizontal: MediaQuery.of(context).size.width * 0.06),
-          child: Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  'Инструкция для новичков',
-                  style: TextStyle(
-                      color: Color(0xFF3F3F3F),
-                      fontWeight: FontWeight.w600,
-                      fontSize: 23),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  'Смотри обучающие видео, чтобы разобраться что куда :)',
-                  style: TextStyle(
-                      color: Color(0xFF7F7F7F),
-                      fontWeight: FontWeight.w600,
-                      fontSize: 11),
-                ),
-                WhiteBox()
-              ],
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: SafeArea(
+          child: Container(
+            margin: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width * 0.06),
+            child: Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    'Инструкция для новичков',
+                    style: TextStyle(
+                        color: Color(0xFF3F3F3F),
+                        fontWeight: FontWeight.w600,
+                        fontSize: 23),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    'Смотри обучающие видео, чтобы разобраться что куда :)',
+                    style: TextStyle(
+                        color: Color(0xFF7F7F7F),
+                        fontWeight: FontWeight.w600,
+                        fontSize: 11),
+                  ),
+                  SizedBox(height: 30),
+                  WhiteBox(),
+                  SizedBox(height: 10),
+                  RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(children: [
+                      const TextSpan(
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w700),
+                        text: '1. Начало ',
+                      ),
+                      const TextSpan(
+                        style:
+                            TextStyle(color: Color(0xFF7F7F7F), fontSize: 13),
+                        text: '- получение персонального кода',
+                      ),
+                    ]),
+                  ),
+                  SizedBox(height: 30),
+                  WhiteBox(),
+                  SizedBox(height: 10),
+                  RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(children: [
+                      const TextSpan(
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w700),
+                        text: '2. Регистрация ',
+                      ),
+                      const TextSpan(
+                        style:
+                            TextStyle(color: Color(0xFF7F7F7F), fontSize: 13),
+                        text: '- создание логина и пароля',
+                      ),
+                    ]),
+                  ),
+                  SizedBox(height: 30),
+                  WhiteBox(),
+                  SizedBox(height: 10),
+                  RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(children: [
+                      const TextSpan(
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w700),
+                        text: '3. Основные разделы ',
+                      ),
+                      const TextSpan(
+                        style:
+                            TextStyle(color: Color(0xFF7F7F7F), fontSize: 13),
+                        text: '- подробнее о каждом',
+                      ),
+                    ]),
+                  ),
+                  SizedBox(height: 30),
+                  WhiteBox(),
+                  SizedBox(height: 10),
+                  RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(children: [
+                      const TextSpan(
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w700),
+                        text: '4. Раздел маршруты ',
+                      ),
+                      const TextSpan(
+                        style:
+                            TextStyle(color: Color(0xFF7F7F7F), fontSize: 13),
+                        text: '- подробнее о каждой кнопке',
+                      ),
+                    ]),
+                  ),
+                  SizedBox(height: 50),
+                  Center(
+                      child: SvgPicture.asset(
+                    'assets/icons/buttomLogo.svg',
+                    height: 70,
+                  )),
+                ],
+              ),
             ),
           ),
         ),
@@ -79,7 +175,7 @@ class WhiteBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(30),
+      padding: const EdgeInsets.all(40),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(Radius.circular(15)),
