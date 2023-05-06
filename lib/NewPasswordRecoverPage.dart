@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'AuthorizationPage.dart';
 
@@ -9,7 +10,7 @@ class NewPasswordRecoverPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFFFFF3ED),
       body: SafeArea(
         child: Container(
           margin: EdgeInsets.symmetric(
@@ -17,7 +18,7 @@ class NewPasswordRecoverPage extends StatelessWidget {
           child: Center(
             child: Column(
               children: [
-                Image.asset("assets/icons/logo.png", height: 128, width: 117),
+                SvgPicture.asset("assets/icons/logo.svg", height: 128, width: 117),
                 const SizedBox(
                   height: 20,
                 ),
@@ -60,7 +61,7 @@ class NewPasswordRecoverPage extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const Authorization()),
+                            MaterialPageRoute(builder: (context) => const AuthorizationPage()),
                           );
                         },
                         style: ButtonStyle(

@@ -1,15 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'AuthorizationPage.dart';
 
-import 'SmsRecoverPasswordPage.dart';
-
-class RecoverPassword extends StatelessWidget {
-  const RecoverPassword({Key? key}) : super(key: key);
+class RecoverPasswordPage extends StatelessWidget {
+  const RecoverPasswordPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFFFFF3ED),
       body: SafeArea(
         child: Container(
           margin: EdgeInsets.symmetric(
@@ -17,13 +17,16 @@ class RecoverPassword extends StatelessWidget {
           child: Center(
             child: Column(
               children: [
-                Image.asset("assets/icons/logo.png", height: 128, width: 117),
+                SvgPicture.asset("assets/icons/logo.svg", height: 128, width: 117),
                 const SizedBox(
                   height: 20,
                 ),
                 const Text(
                   'Восстановить пароль',
-                  style: TextStyle(color: Color(0xFF3F3F3F), fontSize: 23),
+                  style: TextStyle(
+                      color: Color(0xFF3F3F3F),
+                      fontSize: 23,
+                      fontWeight: FontWeight.w500),
                 ),
                 const SizedBox(
                   height: 40,
@@ -60,7 +63,9 @@ class RecoverPassword extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const SmsRecoverPassword()),
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const AuthorizationPage()),
                           );
                         },
                         style: ButtonStyle(
@@ -101,7 +106,6 @@ class RecoverPassword extends StatelessWidget {
                     ],
                   ),
                 ),
-
               ],
             ),
           ),

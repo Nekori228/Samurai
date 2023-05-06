@@ -6,5 +6,5 @@ void main() {
     theme: ThemeData(
       primaryColor: Color(0xFFD19D9A),
     ),
-      home: Authorization()));
+      home: AuthorizationPage()));
 }

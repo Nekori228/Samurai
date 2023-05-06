@@ -1,15 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'NewPasswordRecoverPage.dart';
 
-class SmsRecoverPassword extends StatelessWidget {
-  const SmsRecoverPassword({Key? key}) : super(key: key);
+class SmsRecoverPasswordPage extends StatelessWidget {
+  const SmsRecoverPasswordPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFFFFF3ED),
       body: SafeArea(
         child: Container(
           margin: EdgeInsets.symmetric(
@@ -17,13 +18,16 @@ class SmsRecoverPassword extends StatelessWidget {
           child: Center(
             child: Column(
               children: [
-                Image.asset("assets/icons/logo.png", height: 128, width: 117),
+                SvgPicture.asset("assets/icons/logo.svg", height: 128, width: 117),
                 const SizedBox(
                   height: 20,
                 ),
                 const Text(
                   'Введите код из смс',
-                  style: TextStyle(color: Color(0xFF3F3F3F), fontSize: 23),
+                  style: TextStyle(
+                      color: Color(0xFF3F3F3F),
+                      fontSize: 23,
+                      fontWeight: FontWeight.w500),
                 ),
                 const SizedBox(
                   height: 40,
@@ -44,7 +48,7 @@ class SmsRecoverPassword extends StatelessWidget {
                           ),
                           hintText: 'Введите код',
                           hintStyle:
-                          TextStyle(color: Color(0xFFD19D9A), fontSize: 15),
+                              TextStyle(color: Color(0xFFD19D9A), fontSize: 15),
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(color: Colors.grey),
                           ),
@@ -60,12 +64,14 @@ class SmsRecoverPassword extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const NewPasswordRecoverPage()),
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const NewPasswordRecoverPage()),
                           );
                         },
                         style: ButtonStyle(
                           elevation: MaterialStateProperty.resolveWith<double>(
-                                (Set<MaterialState> states) {
+                            (Set<MaterialState> states) {
                               if (states.contains(MaterialState.pressed)) {
                                 return 8; // тень при нажатии
                               } else {
@@ -74,7 +80,7 @@ class SmsRecoverPassword extends StatelessWidget {
                             },
                           ),
                           backgroundColor:
-                          MaterialStateProperty.all(Color(0xFFE6371F)),
+                              MaterialStateProperty.all(Color(0xFFE6371F)),
                           shape: MaterialStateProperty.all(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15),
@@ -101,7 +107,6 @@ class SmsRecoverPassword extends StatelessWidget {
                     ],
                   ),
                 ),
-
               ],
             ),
           ),
