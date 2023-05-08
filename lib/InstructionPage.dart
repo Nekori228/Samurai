@@ -2,7 +2,40 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'Widgets/AppBarInstruction.dart';
 import 'ChatPage.dart';
+
+class VisitDateAppBar extends StatelessWidget with PreferredSizeWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      toolbarHeight: 85,
+      backgroundColor: Colors.black,
+      centerTitle: false,
+      iconTheme: IconThemeData(color: Colors.white),
+      title: Text(
+        'Выбери дату \nпосещения',
+        style: TextStyle(
+          color: Color(0xFFFFFFFF),
+          fontSize: 36,
+          fontFamily: 'Overpass-Black',
+        ),
+      ),
+      leading: IconButton(
+          icon: Icon(
+            Icons.arrow_circle_left,
+            size: 40,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          }),
+      actions: [SvgPicture.asset("assets/images/smale.svg")],
+    );
+  }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+}
 
 class InstructionPage extends StatelessWidget {
   const InstructionPage({Key? key}) : super(key: key);
@@ -10,38 +43,7 @@ class InstructionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Инструкция',
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700),
-        ),
-        leading: IconButton(
-          icon: SvgPicture.asset(
-            'assets/icons/menu.svg',
-            height: 35,
-            width: 35,
-          ),
-          onPressed: () {},
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        actions: [
-          IconButton(
-            icon: SvgPicture.asset(
-              'assets/icons/chat.svg',
-              height: 35,
-              width: 35,
-            ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const ChatPage()),
-              );
-            },
-          ),
-        ],
-      ),
+      appBar: AppBarWidget(),
       backgroundColor: Color(0xFFFFF3ED),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -155,10 +157,12 @@ class InstructionPage extends StatelessWidget {
                   ),
                   SizedBox(height: 50),
                   Center(
-                      child: SvgPicture.asset(
-                    'assets/icons/buttomLogo.svg',
-                    height: 70,
-                  )),
+                    child: SvgPicture.asset(
+                      'assets/icons/buttomLogo.svg',
+                      height: 70,
+                    ),
+                  ),
+                  SizedBox(height: 20),
                 ],
               ),
             ),

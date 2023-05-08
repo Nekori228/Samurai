@@ -2,38 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'Widgets/AppBarChat.dart';
+
 class ChatPage extends StatelessWidget {
   const ChatPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Чат',
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700),
-        ),
-        leading: IconButton(
-          icon: SvgPicture.asset(
-            'assets/icons/menu.svg',
-            height: 35,
-            width: 35,
-          ),
-          onPressed: () {},
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        actions: [
-          IconButton(
-            icon: SvgPicture.asset(
-              'assets/icons/chat.svg',
-              height: 35,
-              width: 35,
-            ),
-            onPressed: () {},
-          ),
-        ],
-      ),
+      appBar: AppBarChatWidget(),
       backgroundColor: Color(0xFFFFF3ED),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
