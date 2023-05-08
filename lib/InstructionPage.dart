@@ -4,38 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'Widgets/AppBarInstruction.dart';
 import 'ChatPage.dart';
-
-class VisitDateAppBar extends StatelessWidget with PreferredSizeWidget {
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      toolbarHeight: 85,
-      backgroundColor: Colors.black,
-      centerTitle: false,
-      iconTheme: IconThemeData(color: Colors.white),
-      title: Text(
-        'Выбери дату \nпосещения',
-        style: TextStyle(
-          color: Color(0xFFFFFFFF),
-          fontSize: 36,
-          fontFamily: 'Overpass-Black',
-        ),
-      ),
-      leading: IconButton(
-          icon: Icon(
-            Icons.arrow_circle_left,
-            size: 40,
-          ),
-          onPressed: () {
-            Navigator.pop(context);
-          }),
-      actions: [SvgPicture.asset("assets/images/smale.svg")],
-    );
-  }
-
-  @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
-}
+import 'Widgets/DrawerWidget.dart';
 
 class InstructionPage extends StatelessWidget {
   const InstructionPage({Key? key}) : super(key: key);
@@ -169,6 +138,7 @@ class InstructionPage extends StatelessWidget {
           ),
         ),
       ),
+      drawer: DrawerWidget(),
     );
   }
 }

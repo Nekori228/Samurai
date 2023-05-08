@@ -19,7 +19,9 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
           height: 25,
           width: 25,
         ),
-        onPressed: () {},
+        onPressed: () {
+          Scaffold.of(context).openDrawer();
+        },
       ),
       centerTitle: true,
       backgroundColor: Colors.white,

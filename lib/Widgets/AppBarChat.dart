@@ -15,10 +15,12 @@ class AppBarChatWidget extends StatelessWidget with PreferredSizeWidget {
       leading: IconButton(
         icon: SvgPicture.asset(
           'assets/icons/menu.svg',
-          height: 35,
-          width: 35,
+          height: 25,
+          width: 25,
         ),
-        onPressed: () {},
+        onPressed: () {
+          Scaffold.of(context).openDrawer();
+        },
       ),
       centerTitle: true,
       backgroundColor: Colors.white,
@@ -26,10 +28,12 @@ class AppBarChatWidget extends StatelessWidget with PreferredSizeWidget {
         IconButton(
           icon: SvgPicture.asset(
             'assets/icons/chat.svg',
-            height: 35,
-            width: 35,
+            height: 25,
+            width: 25,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Scaffold.of(context).openDrawer();
+          },
         ),
       ],
     );

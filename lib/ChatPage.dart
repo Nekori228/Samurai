@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'Widgets/AppBarChat.dart';
+import 'Widgets/DrawerWidget.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({Key? key}) : super(key: key);
@@ -35,6 +36,7 @@ class ChatPage extends StatelessWidget {
           ),
         ),
       ),
+      drawer: DrawerWidget(),
     );
   }
 }
