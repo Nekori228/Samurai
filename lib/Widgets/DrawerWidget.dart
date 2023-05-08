@@ -1,5 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../AuthorizationPage.dart';
+import '../InstructionPage.dart';
+import '../NewPasswordRecoverPage.dart';
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({Key? key}) : super(key: key);
@@ -15,13 +20,17 @@ class DrawerWidget extends StatelessWidget {
           child: SafeArea(
             child: Container(
               margin: EdgeInsets.symmetric(
-                  horizontal: MediaQuery.of(context).size.width * 0.10),
+                  horizontal: MediaQuery.of(context).size.width * 0.08),
               child: Column(
                 children: [
                   Spacer(),
                   Row(
                     children: [
-                      Icon(Icons.person),
+                      SvgPicture.asset(
+                        "assets/icons/user2.svg",
+                        height: 30,
+                        width: 30,
+                      ),
                       SizedBox(width: 5),
                       Text(
                         'Иванов Иван Иванович',
@@ -70,6 +79,7 @@ class DrawerWidget extends StatelessWidget {
                       ),
                     ),
                   ),
+                  SizedBox(height: 20),
                   ListTile(
                     dense: true,
                     onTap: () {
@@ -78,15 +88,16 @@ class DrawerWidget extends StatelessWidget {
                       //     MaterialPageRoute(
                       //         builder: (context) => const AboutPage()));
                     },
-                    leading: const Icon(
-                      Icons.info_outlined,
-                      color: Colors.black,
+                    leading: SvgPicture.asset(
+                      "assets/icons/map.svg",
+                      height: 25,
+                      width: 25,
                     ),
                     title: const Text(
                       "Маршрут",
                       style: TextStyle(
                         color: Color(0xFF7F7F7F),
-                        fontSize: 14,
+                        fontSize: 15,
                       ),
                     ),
                   ),
@@ -98,15 +109,16 @@ class DrawerWidget extends StatelessWidget {
                       //     MaterialPageRoute(
                       //         builder: (context) => const AboutMe()));
                     },
-                    leading: const Icon(
-                      Icons.engineering,
-                      color: Colors.black,
+                    leading: SvgPicture.asset(
+                      "assets/icons/sms.svg",
+                      height: 25,
+                      width: 25,
                     ),
                     title: const Text(
                       "Уведомления",
                       style: TextStyle(
                         color: Color(0xFF7F7F7F),
-                        fontSize: 14,
+                        fontSize: 15,
                       ),
                     ),
                   ),
@@ -118,15 +130,16 @@ class DrawerWidget extends StatelessWidget {
                       //     MaterialPageRoute(
                       //         builder: (context) => const AboutMe()));
                     },
-                    leading: const Icon(
-                      Icons.engineering,
-                      color: Colors.black,
+                    leading: SvgPicture.asset(
+                      "assets/icons/zakazi.svg",
+                      height: 25,
+                      width: 25,
                     ),
                     title: const Text(
                       "Доставленные заказы",
                       style: TextStyle(
                         color: Color(0xFF7F7F7F),
-                        fontSize: 14,
+                        fontSize: 15,
                       ),
                     ),
                   ),
@@ -138,15 +151,16 @@ class DrawerWidget extends StatelessWidget {
                       //     MaterialPageRoute(
                       //         builder: (context) => const AboutMe()));
                     },
-                    leading: const Icon(
-                      Icons.engineering,
-                      color: Colors.black,
+                    leading: SvgPicture.asset(
+                      "assets/icons/statistics.svg",
+                      height: 25,
+                      width: 25,
                     ),
                     title: const Text(
                       "Статистика",
                       style: TextStyle(
                         color: Color(0xFF7F7F7F),
-                        fontSize: 14,
+                        fontSize: 15,
                       ),
                     ),
                   ),
@@ -158,15 +172,16 @@ class DrawerWidget extends StatelessWidget {
                       //     MaterialPageRoute(
                       //         builder: (context) => const AboutMe()));
                     },
-                    leading: const Icon(
-                      Icons.engineering,
-                      color: Colors.black,
+                    leading: SvgPicture.asset(
+                      "assets/icons/otchet.svg",
+                      height: 25,
+                      width: 25,
                     ),
                     title: const Text(
                       "Отчёт за смену",
                       style: TextStyle(
                         color: Color(0xFF7F7F7F),
-                        fontSize: 14,
+                        fontSize: 15,
                       ),
                     ),
                   ),
@@ -178,15 +193,16 @@ class DrawerWidget extends StatelessWidget {
                       //     MaterialPageRoute(
                       //         builder: (context) => const AboutMe()));
                     },
-                    leading: const Icon(
-                      Icons.engineering,
-                      color: Colors.black,
+                    leading: SvgPicture.asset(
+                      "assets/icons/star.svg",
+                      height: 25,
+                      width: 25,
                     ),
                     title: const Text(
                       "Оценка работы",
                       style: TextStyle(
                         color: Color(0xFF7F7F7F),
-                        fontSize: 14,
+                        fontSize: 15,
                       ),
                     ),
                   ),
@@ -198,15 +214,16 @@ class DrawerWidget extends StatelessWidget {
                       //     MaterialPageRoute(
                       //         builder: (context) => const AboutMe()));
                     },
-                    leading: const Icon(
-                      Icons.engineering,
-                      color: Colors.black,
+                    leading: SvgPicture.asset(
+                      "assets/icons/calendar.svg",
+                      height: 25,
+                      width: 25,
                     ),
                     title: const Text(
                       "График работы",
                       style: TextStyle(
                         color: Color(0xFF7F7F7F),
-                        fontSize: 14,
+                        fontSize: 15,
                       ),
                     ),
                   ),
@@ -218,58 +235,62 @@ class DrawerWidget extends StatelessWidget {
                       //     MaterialPageRoute(
                       //         builder: (context) => const AboutMe()));
                     },
-                    leading: const Icon(
-                      Icons.engineering,
-                      color: Colors.black,
+                    leading: SvgPicture.asset(
+                      "assets/icons/news.svg",
+                      height: 25,
+                      width: 25,
                     ),
                     title: const Text(
                       "Новости",
                       style: TextStyle(
                         color: Color(0xFF7F7F7F),
-                        fontSize: 14,
+                        fontSize: 15,
                       ),
                     ),
                   ),
                   ListTile(
                     dense: true,
                     onTap: () {
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) => const AboutMe()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const NewPasswordRecoverPage()));
                     },
-                    leading: const Icon(
-                      Icons.engineering,
-                      color: Colors.black,
+                    leading: SvgPicture.asset(
+                      "assets/icons/pass.svg",
+                      height: 25,
+                      width: 25,
                     ),
                     title: const Text(
                       "Сменить пароль",
                       style: TextStyle(
                         color: Color(0xFF7F7F7F),
-                        fontSize: 14,
+                        fontSize: 15,
                       ),
                     ),
                   ),
                   ListTile(
                     dense: true,
                     onTap: () {
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) => const AboutMe()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const AuthorizationPage()));
                     },
-                    leading: const Icon(
-                      Icons.engineering,
-                      color: Colors.black,
+                    leading: SvgPicture.asset(
+                      "assets/icons/exit.svg",
+                      height: 25,
+                      width: 25,
                     ),
                     title: const Text(
                       "Выход",
                       style: TextStyle(
                         color: Color(0xFF7F7F7F),
-                        fontSize: 14,
+                        fontSize: 15,
                       ),
                     ),
                   ),
+                  SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -283,15 +304,15 @@ class DrawerWidget extends StatelessWidget {
                         },
                         style: ButtonStyle(
                           overlayColor:
-                          MaterialStateProperty.resolveWith<Color?>(
-                                (Set<MaterialState> states) {
+                              MaterialStateProperty.resolveWith<Color?>(
+                            (Set<MaterialState> states) {
                               if (states.contains(MaterialState.pressed))
                                 return Color(0xFFE6371F);
                               return null;
                             },
                           ),
                           elevation: MaterialStateProperty.resolveWith<double>(
-                                (Set<MaterialState> states) {
+                            (Set<MaterialState> states) {
                               if (states.contains(MaterialState.pressed)) {
                                 return 8; // тень при нажатии
                               } else {
@@ -300,7 +321,7 @@ class DrawerWidget extends StatelessWidget {
                             },
                           ),
                           backgroundColor:
-                          MaterialStateProperty.all(Color(0xFFFFF3ED)),
+                              MaterialStateProperty.all(Color(0xFFFFF3ED)),
                           shape: MaterialStateProperty.all(
                             RoundedRectangleBorder(
                               side: BorderSide(
@@ -309,36 +330,46 @@ class DrawerWidget extends StatelessWidget {
                             ),
                           ),
                         ),
-                        child: const SizedBox(
-                          height: 60,
-                          child: Center(
-                            child: Text(
-                              "Помощь",
-                              style: TextStyle(
-                                  fontSize: 18, color: Color(0xFFE6371F)),
+                        child: Row(
+                          children: [
+                            SvgPicture.asset(
+                              "assets/icons/phone-2.svg",
+                              height: 30,
+                              width: 30,
                             ),
-                          ),
+                            SizedBox(width: 5),
+                            const SizedBox(
+                              height: 60,
+                              child: Center(
+                                child: Text(
+                                  "Помощь",
+                                  style: TextStyle(
+                                      fontSize: 18, color: Color(0xFFE6371F)),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //       builder: (context) => const RegistrPage()),
-                          // );
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const InstructionPage()),
+                          );
                         },
                         style: ButtonStyle(
                           overlayColor:
-                          MaterialStateProperty.resolveWith<Color?>(
-                                (Set<MaterialState> states) {
+                              MaterialStateProperty.resolveWith<Color?>(
+                            (Set<MaterialState> states) {
                               if (states.contains(MaterialState.pressed))
                                 return Color(0xFFE6371F);
                               return null;
                             },
                           ),
                           elevation: MaterialStateProperty.resolveWith<double>(
-                                (Set<MaterialState> states) {
+                            (Set<MaterialState> states) {
                               if (states.contains(MaterialState.pressed)) {
                                 return 8; // тень при нажатии
                               } else {
@@ -347,7 +378,7 @@ class DrawerWidget extends StatelessWidget {
                             },
                           ),
                           backgroundColor:
-                          MaterialStateProperty.all(Color(0xFFFFF3ED)),
+                              MaterialStateProperty.all(Color(0xFFFFF3ED)),
                           shape: MaterialStateProperty.all(
                             RoundedRectangleBorder(
                               side: BorderSide(
@@ -356,15 +387,25 @@ class DrawerWidget extends StatelessWidget {
                             ),
                           ),
                         ),
-                        child: const SizedBox(
-                          height: 60,
-                          child: Center(
-                            child: Text(
-                              "Инструкции",
-                              style: TextStyle(
-                                  fontSize: 18, color: Color(0xFFE6371F)),
+                        child: Row(
+                          children: [
+                            SvgPicture.asset(
+                              "assets/icons/video.svg",
+                              height: 30,
+                              width: 30,
                             ),
-                          ),
+                            SizedBox(width: 5),
+                            const SizedBox(
+                              height: 60,
+                              child: Center(
+                                child: Text(
+                                  "Инструкции",
+                                  style: TextStyle(
+                                      fontSize: 18, color: Color(0xFFE6371F)),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],

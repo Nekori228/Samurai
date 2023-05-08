@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'AuthorizationPage.dart';
+import 'SmsRecoverPasswordPage.dart';
 
 class RecoverPasswordPage extends StatelessWidget {
   const RecoverPasswordPage({Key? key}) : super(key: key);
@@ -65,7 +66,7 @@ class RecoverPasswordPage extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    const AuthorizationPage()),
+                                    const SmsRecoverPasswordPage()),
                           );
                         },
                         style: ButtonStyle(
