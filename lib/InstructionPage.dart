@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'Widgets/AppBarInstruction.dart';
-import 'ChatPage.dart';
 import 'Widgets/DrawerWidget.dart';
 
 class InstructionPage extends StatelessWidget {
@@ -12,7 +11,7 @@ class InstructionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(),
+      appBar: AppBarDeliveredOrders(),
       backgroundColor: Color(0xFFFFF3ED),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,

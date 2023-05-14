@@ -4,12 +4,12 @@ import 'package:flutter_svg/svg.dart';
 
 import '../ChatPage.dart';
 
-class AppBarRoutesWidget extends StatelessWidget with PreferredSizeWidget {
+class AppBarWorkSchedule extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(
-        'Маршрут',
+        'График работы',
         style: TextStyle(
             color: Colors.black, fontWeight: FontWeight.w700, fontSize: 19),
       ),

@@ -6,6 +6,7 @@ import 'package:url_launcher/url_launcher_string.dart';
 import 'InstructionPage.dart';
 import 'RecoverPasswordPage.dart';
 import 'RegistrPage.dart';
+import 'RoutesPage.dart';
 
 class AuthorizationPage extends StatelessWidget {
   const AuthorizationPage({Key? key}) : super(key: key);
@@ -21,6 +22,7 @@ class AuthorizationPage extends StatelessWidget {
           child: Center(
             child: Column(
               children: [
+                SizedBox(height: 30),
                 SvgPicture.asset("assets/icons/logo.svg", height: 128, width: 117),
                 const Text(
                   'Авторизация',
@@ -108,7 +110,14 @@ class AuthorizationPage extends StatelessWidget {
                         height: 20,
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const RoutesPage(),
+                            ),
+                          );
+                        },
                         style: ButtonStyle(
                           overlayColor:
                               MaterialStateProperty.resolveWith<Color?>(

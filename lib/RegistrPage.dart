@@ -17,6 +17,7 @@ class RegistrPage extends StatelessWidget {
           child: Center(
             child: Column(
               children: [
+                SizedBox(height: 30),
                 SvgPicture.asset("assets/icons/logo.svg", height: 128, width: 117),
                 const Text(
                   'Регистрация',

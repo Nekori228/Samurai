@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../AuthorizationPage.dart';
+import '../DeliveredOrdersPage.dart';
 import '../InstructionPage.dart';
 import '../NewPasswordRecoverPage.dart';
 import '../RoutesPage.dart';
+import '../ShiftReportPage.dart';
+import '../WorkSchedulePage.dart';
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({Key? key}) : super(key: key);
@@ -128,10 +131,12 @@ class DrawerWidget extends StatelessWidget {
                   ListTile(
                     dense: true,
                     onTap: () {
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) => const AboutMe()));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const DeliveredOrdersPage(),
+                        ),
+                      );
                     },
                     leading: SvgPicture.asset(
                       "assets/icons/zakazi.svg",
@@ -170,10 +175,12 @@ class DrawerWidget extends StatelessWidget {
                   ListTile(
                     dense: true,
                     onTap: () {
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) => const AboutMe()));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ShiftReportPage(),
+                        ),
+                      );
                     },
                     leading: SvgPicture.asset(
                       "assets/icons/otchet.svg",
@@ -212,10 +219,12 @@ class DrawerWidget extends StatelessWidget {
                   ListTile(
                     dense: true,
                     onTap: () {
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) => const AboutMe()));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const WorkSchedulePage(),
+                        ),
+                      );
                     },
                     leading: SvgPicture.asset(
                       "assets/icons/calendar.svg",

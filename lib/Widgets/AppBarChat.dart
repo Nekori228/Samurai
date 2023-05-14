@@ -10,7 +10,8 @@ class AppBarChatWidget extends StatelessWidget with PreferredSizeWidget {
     return AppBar(
       title: Text(
         'Чат',
-        style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700),
+        style: TextStyle(
+            color: Colors.black, fontWeight: FontWeight.w700, fontSize: 19),
       ),
       leading: IconButton(
         icon: SvgPicture.asset(
