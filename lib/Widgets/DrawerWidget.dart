@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import '../AuthorizationPage.dart';
 import '../InstructionPage.dart';
 import '../NewPasswordRecoverPage.dart';
+import '../RoutesPage.dart';
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({Key? key}) : super(key: key);
@@ -83,10 +84,12 @@ class DrawerWidget extends StatelessWidget {
                   ListTile(
                     dense: true,
                     onTap: () {
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) => const AboutPage()));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const RoutesPage(),
+                        ),
+                      );
                     },
                     leading: SvgPicture.asset(
                       "assets/icons/map.svg",
@@ -252,9 +255,11 @@ class DrawerWidget extends StatelessWidget {
                     dense: true,
                     onTap: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const NewPasswordRecoverPage()));
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const NewPasswordRecoverPage(),
+                        ),
+                      );
                     },
                     leading: SvgPicture.asset(
                       "assets/icons/pass.svg",
@@ -273,9 +278,11 @@ class DrawerWidget extends StatelessWidget {
                     dense: true,
                     onTap: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const AuthorizationPage()));
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const AuthorizationPage(),
+                        ),
+                      );
                     },
                     leading: SvgPicture.asset(
                       "assets/icons/exit.svg",
