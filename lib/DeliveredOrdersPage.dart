@@ -544,7 +544,7 @@ class DeliveredOrdersPage extends StatelessWidget {
                                                     children: [
                                                       SizedBox(height: 10),
                                                       SvgPicture.asset(
-                                                        'assets/icons/terminal.svg',
+                                                        'assets/icons/nal.svg',
                                                         height: 40,
                                                         width: 40,
                                                       ),
@@ -641,7 +641,7 @@ class DeliveredOrdersPage extends StatelessWidget {
                                                     children: [
                                                       SizedBox(height: 10),
                                                       SvgPicture.asset(
-                                                        'assets/icons/terminal.svg',
+                                                        'assets/icons/qrcode.svg',
                                                         height: 40,
                                                         width: 40,
                                                       ),
@@ -685,6 +685,7 @@ class DeliveredOrdersPage extends StatelessWidget {
                                           ),
                                           SizedBox(height: 20),
                                           Row(
+                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                             children: [
                                               ElevatedButton(
                                                 onPressed: () {
@@ -735,13 +736,17 @@ class DeliveredOrdersPage extends StatelessWidget {
                                                     ),
                                                   ),
                                                 ),
-                                                child: const SizedBox(
-                                                  height: 60,
-                                                  child: Center(
-                                                    child: Text(
-                                                      "Заказ выдан",
-                                                      style: TextStyle(
-                                                          fontSize: 18),
+                                                child: Container(
+                                                  margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                                                  child: const SizedBox(
+                                                    height: 60,
+                                                    child: Center(
+                                                      child: Text(
+                                                        "Заказ выдан",
+                                                        style: TextStyle(
+                                                          fontWeight: FontWeight.w700,
+                                                            fontSize: 18),
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
@@ -795,18 +800,31 @@ class DeliveredOrdersPage extends StatelessWidget {
                                                     ),
                                                   ),
                                                 ),
-                                                child: const SizedBox(
+                                                child: SizedBox(
                                                   height: 60,
-                                                  child: Center(
-                                                    child: Text(
-                                                      "Помощь",
-                                                      style: TextStyle(
-                                                        fontSize: 18,
+                                                  child: Row(
+                                                    children: [
+                                                      SvgPicture.asset(
+                                                        'assets/icons/phone3.svg',
+                                                        height: 20,
+                                                        width: 20,
                                                         color: Color(
                                                           (0xFFA3A8AC),
                                                         ),
                                                       ),
-                                                    ),
+                                                      SizedBox(width: 10),
+                                                      Center(
+                                                        child: Text(
+                                                          "Помощь",
+                                                          style: TextStyle(
+                                                            fontSize: 18,
+                                                            color: Color(
+                                                              (0xFFA3A8AC),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
                                                   ),
                                                 ),
                                               ),
